@@ -16,5 +16,10 @@ namespace Csharp_calculator
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = Calc.Calculate(textBox1.Text);
+        }
     }
 }
