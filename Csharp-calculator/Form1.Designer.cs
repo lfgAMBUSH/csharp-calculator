@@ -35,13 +35,14 @@
             this.standart_mode = new System.Windows.Forms.ToolStripMenuItem();
             this.logic_mode = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Share Tech Mono", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Font = new System.Drawing.Font("Share Tech Mono", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(12, 67);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(443, 98);
@@ -86,18 +87,19 @@
             this.standart_mode.Checked = true;
             this.standart_mode.CheckState = System.Windows.Forms.CheckState.Checked;
             this.standart_mode.Name = "standart_mode";
-            this.standart_mode.Size = new System.Drawing.Size(285, 42);
+            this.standart_mode.Size = new System.Drawing.Size(412, 66);
             this.standart_mode.Text = "Обычный";
             // 
             // logic_mode
             // 
             this.logic_mode.Name = "logic_mode";
-            this.logic_mode.Size = new System.Drawing.Size(285, 42);
+            this.logic_mode.Size = new System.Drawing.Size(412, 66);
             this.logic_mode.Text = "Логический";
             this.logic_mode.CheckedChanged += new System.EventHandler(this.logic_mode_CheckedChanged);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(470, 67);
@@ -109,10 +111,21 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(120, 171);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 125);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "~ - знак отрицания\r\n+ - сложение\r\n- - вычитание\r\n/ - деление\r\n* - умножение\r\n";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(465, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -137,6 +150,7 @@
         private System.Windows.Forms.ToolStripMenuItem standart_mode;
         private System.Windows.Forms.ToolStripMenuItem logic_mode;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

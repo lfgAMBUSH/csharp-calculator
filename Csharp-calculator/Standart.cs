@@ -31,6 +31,8 @@ namespace Csharp_calculator
                     case '*':
                     case '/':
                         return 2;
+                    case '~':
+                        return 3;
                     default:
                         return 0;
                 }
@@ -46,6 +48,14 @@ namespace Csharp_calculator
                 if (char.IsDigit(c) || c == '.')
                 {
                     output += c;
+                }
+                else if ("~".Contains(c))
+                {
+                    while (stack.Count > 0 && Priority(stack.Peek()) >= Priority(c))
+                    {
+                        output += stack.Pop() + " ";
+                    }
+                    stack.Push(c);
                 }
                 else if ("*+-/".Contains(c))
                 {
@@ -101,6 +111,11 @@ namespace Csharp_calculator
                 {
                     stack.Push(d);
                 }
+                else if ("~".Contains(c))
+                {
+                    double a = stack.Pop();
+                    stack.Push(a * -1);
+                }
                 else if ("*+-/".Contains(c))
                 {
                     double a = stack.Pop();
@@ -108,16 +123,16 @@ namespace Csharp_calculator
                     switch (c)
                     {
                         case "+":
-                            stack.Push(a + b);
+                            stack.Push(b + a);
                             break;
                         case "-":
-                            stack.Push(a - b);
+                            stack.Push(b - a);
                             break;
                         case "/":
-                            stack.Push(a / b);
+                            stack.Push(b / a);
                             break;
                         case "*":
-                            stack.Push(a * b);
+                            stack.Push(b * a);
                             break;
                     }
                 }
